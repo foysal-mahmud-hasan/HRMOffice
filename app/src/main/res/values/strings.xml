@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">HRMFinal</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login_page">Login</string>
+    <string name="login_page_message">Please login to continue</string>
+    <string name="login_page_ID">ID</string>
+    <string name="login_page_pass">Password</string>
+
+    <string-array name="all_types">
+        <item>Full-Day</item>
+        <item>Half-Day</item>
+    </string-array>
+
+
+    <!-- Output to TextView styled with a little HTML -->
+    <string name="title"><![CDATA[<h3>All User Exceptions</h3>]]></string>
+    <string name="start_time"><![CDATA[<b>Start:</b>]]></string>
+    <string name="end_time"><![CDATA[<b>End:</b>]]></string>
+    <string name="quality"><![CDATA[<b>Quality:</b>]]></string>
+    <string name="hours_slept"><![CDATA[<b>Hours:Minutes:Seconds</b>]]></string>
+    <string name="login">Login</string>
+    <string name="white_services_technology">White Services Technology</string>
+    <string name="exception_reason">Exception</string> />
+</resources>
