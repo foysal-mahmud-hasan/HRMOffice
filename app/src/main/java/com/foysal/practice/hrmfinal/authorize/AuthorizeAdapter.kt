@@ -20,12 +20,16 @@ class AuthorizeAdapter : RecyclerView.Adapter<AuthorizeAdapter.ViewHolder>() {
     override fun getItemCount(): Int {
         return data.size
     }
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder,
+                                  position: Int) {
         val item = data[position]
         holder.bind(item)
 
     }
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup,
+                                    viewType: Int): ViewHolder
+    {
+
         return ViewHolder.from(parent)
     }
     class ViewHolder private constructor(itemView : View) :
@@ -45,9 +49,13 @@ class AuthorizeAdapter : RecyclerView.Adapter<AuthorizeAdapter.ViewHolder>() {
 
             fun from(parent: ViewGroup) : ViewHolder{
 
+
+
                 val layoutInflater = LayoutInflater.from(parent.context)
                 val view = layoutInflater.inflate(R.layout.card_design,
                 parent, false)
+
+
 
                 return ViewHolder(view)
 

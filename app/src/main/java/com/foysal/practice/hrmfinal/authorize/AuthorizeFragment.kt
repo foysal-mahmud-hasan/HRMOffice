@@ -29,13 +29,18 @@ class AuthorizeFragment:Fragment() {
         val scope = CoroutineScope(Dispatchers.Main)
         val dataSource = UserDatabase.getInstance(application, scope)
 
-        val viewModelFactory = AuthorizeViewModelFactory(arguments.id, dataSource, application)
+        val viewModelFactory = AuthorizeViewModelFactory(arguments.id, dataSource.exceptionDao, application)
         val authorizeViewModel = ViewModelProvider(this, viewModelFactory).get(AuthorizeViewModel::class.java)
 
         val adapter = AuthorizeAdapter()
         binding.recyclerView2.adapter = adapter
 
-        authorizeViewModel.exceptions.observe(viewLifecycleOwner, Observer {
+//        authorizeViewModel.exceptions.observe(viewLifecycleOwner, Observer {
+//            it?.let {
+//                adapter.data = it
+//            }
+//        })
+        authorizeViewModel.exceptionsAll.observe(viewLifecycleOwner, Observer {
             it?.let {
                 adapter.data = it
             }
@@ -43,7 +48,7 @@ class AuthorizeFragment:Fragment() {
         binding.lifecycleOwner = this
 
 
-    return binding.root
+        return binding.root
     }
 
 }

@@ -5,11 +5,13 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.foysal.practice.hrmfinal.database.ExceptionDao
 import com.foysal.practice.hrmfinal.database.ExceptionData
+import com.foysal.practice.hrmfinal.database.UserDao
 import com.foysal.practice.hrmfinal.database.UserDatabase
 import kotlinx.coroutines.*
 
-class AuthorizeViewModel (private val userId : String, val database: UserDatabase, application: Application)
+class AuthorizeViewModel (private val userId : String, val database: ExceptionDao, application: Application)
     : AndroidViewModel(application){
 
     private var viewModelJob = Job()
@@ -19,6 +21,7 @@ class AuthorizeViewModel (private val userId : String, val database: UserDatabas
 
     val allException : LiveData<ExceptionData>
         get() = _allException
-    val exceptions = database.exceptionDao.get(userId)
+    val exceptions = database.get(userId)
+    val exceptionsAll = database.getAll()
 
 }

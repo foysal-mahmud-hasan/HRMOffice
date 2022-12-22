@@ -19,4 +19,7 @@ interface ExceptionDao {
     @Query("SELECT * FROM exception_table WHERE userExceptionId = :key")
     fun get(key : String) : LiveData<List<ExceptionData>>
 
+    @Query("SELECT * FROM exception_table ORDER BY userDate DESC")
+    fun getAll() : LiveData<List<ExceptionData>>
+
 }
