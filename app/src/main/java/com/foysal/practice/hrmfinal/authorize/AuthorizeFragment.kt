@@ -40,7 +40,7 @@ class AuthorizeFragment:Fragment() {
 //                adapter.data = it
 //            }
 //        })
-        authorizeViewModel.exceptionsAll.observe(viewLifecycleOwner, Observer {
+        authorizeViewModel.exceptions.observe(viewLifecycleOwner, Observer {
             it?.let {
                 adapter.data = it
             }
